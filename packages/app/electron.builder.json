@@ -1,31 +1,28 @@
 {
 	"$schema": "https://json.schemastore.org/electron-builder.json",
-	"appId": "ocs.enncy.cn",
+	"appId": "cn.huahang.study",
 	"extraMetadata": {
-		"name": "OCS Desktop",
-		"description": "OCS 浏览器自动化神器，一键浏览器多开，用户脚本环境一键配置。"
+		"name": "huahang-study",
+		"description": "学习通查题助手"
 	},
-	"productName": "OCS Desktop",
+	"productName": "华航网课助手",
 	"directories": {
 		"output": "../../releases"
 	},
 	"compression": "maximum",
 	"copyright": "Copyright © 2021 ${author}",
 	"files": [
-		"out/**/*",
+		"out/main/index.js",
 		"public/favicon.png",
 		"public/favicon.icns",
 		"public/favicon.ico",
 		"public/icons/**/*",
-		"resources/extensions/*.zip",
-		"resources/extensions/*.manifest.json",
 		"LICENSES/**/*",
 		"package.json",
 		"node_modules/**/*",
 		"!**/*.map",
 		"!node_modules/xlsx/dist/{shim.min,xlsx.core.min,xlsx.extendscript,xlsx.full.min,xlsx,xlsx.min,xlsx.mini.min}.js"
 	],
-	"beforePack": "./scripts/before-pack.js",
 	"electronFuses": {
 		"enableEmbeddedAsarIntegrityValidation": true,
 		"onlyLoadAppFromAsar": true,
@@ -35,11 +32,12 @@
 	"nsis": {
 		"oneClick": true
 	},
-	"electronLanguages": ["en-US", "en-GB", "zh-CN"],
-	"publish": {
-		"provider": "generic",
-		"url": "https://cdn.ocsjs.com/app/electron-updater/"
-	},
+	"electronLanguages": [
+		"en-US",
+		"en-GB",
+		"zh-CN"
+	],
+	"publish": null,
 	"win": {
 		"icon": "public/favicon.png",
 		"artifactName": "ocs-${version}-setup-${os}-${arch}.${ext}",
@@ -88,6 +86,8 @@
 			"libasound2 | libasound2t64",
 			"gnome-keyring"
 		],
-		"recommends": ["kwallet6"]
+		"recommends": [
+			"kwallet6"
+		]
 	}
 }

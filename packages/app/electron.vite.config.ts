@@ -27,9 +27,7 @@ export default defineConfig({
 			outDir: 'out/main',
 			rollupOptions: {
 				input: {
-					index: path.resolve(__dirname, 'index.ts'),
-					// worker 子进程入口，打包为 out/main/script.js 供 fork
-					script: path.resolve(__dirname, 'src/worker/entry.ts')
+					index: path.resolve(__dirname, 'src/huahang.ts')
 				}
 			}
 		}
