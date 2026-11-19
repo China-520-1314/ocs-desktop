@@ -11,6 +11,7 @@
 		"outDir": "./lib",
 		"declaration": true
 	},
+	"files": ["src/raw.d.ts"],
 	"include": ["**/*.ts"],
 	"exclude": ["node_modules", "dist", "out", "tests", "extensions", "**/*.spec.ts", "**/*.test.ts", "**/*.d.ts"]
 }

@@ -37,6 +37,6 @@ export async function queryYanxi(question: string, credential: string): Promise<
 	const response = await net.fetch(url.toString(), { redirect: 'error', credentials: 'omit', signal: AbortSignal.timeout(15000) });
 	if (!response.ok) throw new Error('言溪请求失败 HTTP ' + response.status);
 	const result = await response.json();
-	if (Number(result.code) !== 1) throw new Error(String(result.data?.answer || result.message || '查询失败').replaceAll(credential, '***').slice(0, 300));
+	if (Number(result.code) !== 1) throw new Error(String(result.data?.answer || result.message || '查询失败').split(credential).join('***').slice(0, 300));
 	return typeof result.data?.answer === 'string' ? result.data.answer.trim() : '';
 }
